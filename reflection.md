@@ -8,31 +8,42 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+If you entered a low number it'd tell you to go lower and same for high number. The hints were backwards. The score is also weird. There are 8 attempts but my score was -25 after being wrong 8 times (on the 3rd play). Looking at the code it seems like it would return the range 1-100 regardless of mode (need to check this).
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
+This is from my 2nd play
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 33| "Lower" | "Higher" | "Too High", "📈 Go HIGHER!"|
+| 23| "Lower" | "Higher" | "Too High", "📈 Go HIGHER!"|
+| 22| "Lower" | "Higher" | "Too High", "📈 Go HIGHER!"|
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? 
+Claude 
 
+- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+It fixed the backwards hints, fixed the ranges to better reflect the difficulty, st.info to give actual range instead of hardcoding 1 and 100, fixed attempts to start at 0 instead of 1
+
+- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+It removed the -5 score deduction on each attempt which I think was supposed to stay. It also did not fix the attempt limit to accurately reflect the difficulty. I just checked the code.
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+Testing the game again and checking if the print statements correspond to the correct action
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+
+I reloaded the streamlit website and played a game and verified the visuals that should be fixed.
 - Did AI help you design or understand any tests? How?
 
 ---
@@ -40,7 +51,7 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+reruns are when the website is reloaded, meaning that the code is run top to bottom and everything is "forgotten". In this case, it gives you a new number and resets the attempts and score. A similar example would be if you are in the middle of playing a non-online game (e.g. RPGs, multiplayer game) without saving, you could lose your progress. A session state establishes that memory that allows you to save a part, or called variables, you would like between reruns. An example is saving the score, the secret number, and the attempts.
 ---
 
 ## 5. Looking ahead: your developer habits
