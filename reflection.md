@@ -38,14 +38,14 @@ It removed the -5 score deduction on each attempt which I think was supposed to 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
-Testing the game again and checking if the print statements correspond to the correct action
+Testing the game again and checking if the print statements correspond to the correct action. I also asked it to write pytests and ran them.
 
 - Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
-
+and what it showed you about your code.
 I reloaded the streamlit website and played a game and verified the visuals that should be fixed.
-- Did AI help you design or understand any tests? How?
 
+- Did AI help you design or understand any tests? How?
+It added 18 tests to pytests with code explaining what bug each test tests and the expected outputs. It also helped me refactor my code inside logic_utils to have cleaner logic and code design.
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -58,5 +58,10 @@ reruns are when the website is reloaded, meaning that the code is run top to bot
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+Be more focused with my prompts and make it write tests for code that I understand and write.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+Visually read the code myself to confirm, always test the code at runtime. I would also be a lot more specific so the AI is more focused.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+Before, I tend to rely on it to code and trusted it a lot more, but now, I will use it more as a planner and use documentation to verify AI code before implementing it.
